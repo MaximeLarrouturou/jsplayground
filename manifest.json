@@ -1,0 +1,9 @@
+{
+    "name": "jsplayground",
+    "short_name": "jsp",
+    "theme_color": "#2a97ee",
+    "background_color": "#2196f3",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+  }
