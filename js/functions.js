@@ -57,6 +57,8 @@ function motobike(make, power) { // function motobike(make, power = 100), si bes
     console.log(`Je roule en : ${make} . Avec une puissance de : ${power} ch`);
 }
 
+// template string ${}
+
 // on passe des arguments
 motobike('Kawasaki ZX10R', 203);
 
@@ -67,4 +69,4 @@ function Motorbike(marque, modele, annee, cc, puissance, couple, prix, autre) {
 
 }
 
-const motorbikeToBuy = new Motorbike('Kawasaki', 'zx10r', '2019', 998, '203ch', '114.9 N•m', 18099, ''); 
+const motorbikeToBuy = new Motorbike('Kawasaki', 'ZX10-R', '2019', 998, '203ch', '114.9 N•m', 18099, ''); 

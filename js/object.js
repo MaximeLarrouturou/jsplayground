@@ -1,8 +1,9 @@
 // Object literal syntax
 const vehicle = {
     id: 1,
-    brand: 'Suzuki',
-    model: 'GSXR1000',
+    brand: 'Triumph',
+    model: 'Daytona 675 R',
+    color: 'Blanc',
     electronic: function (){
         console.log('Traction Control');
     }
@@ -33,3 +34,44 @@ res.map((item) => {
 
 console.log(res);
 // res est le diminutif de result
+
+/******| Getter |******/
+
+Object.defineProperty(vehicle, 'summary', {
+    get: function() {
+        return `véhicule ${this.brand} de couleur ${this.color}`; 
+    },
+/******| Setter |******/    
+    set: function(value) {
+        const caracterics = value.split(',');
+        this.brand = caracterics[0];
+        this.model = caracterics[1];
+        this.color = caracterics[2];
+    }
+});
+
+vehicle.summary = 'triumph, daytona, blanche';
+
+console.log(vehicle.summary);
+
+/*******************************/
+/******| Cloner un objet |******/ 
+/*******************************/ 
+
+/*************************/
+/******| Méthode 1 |******/  
+const firstHand = {id: 2, brand: 'Kawasaki', model: 'ZX6-R 636', color:'verte'};
+const secondHand = Object.assign({}, firstHand, {color: 'bleu', powerhorse:'125ch'});
+
+/*******************************************/
+/******| Spread Operator (méthode 2) |******/  
+const thirdHand = {...firstHand, color: 'noir'};
+
+/****************************************/
+/******| LocalStorage (méthode 3) |******/  
+const fourth = JSON.parse(JSON.stringify(firstHand));
+
+console.log(firstHand);
+console.log(secondHand);
+console.log(thirdHand);
+console.log(fourth);
