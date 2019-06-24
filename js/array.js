@@ -62,9 +62,46 @@ const pilotes = [
         born: '10/01/1971', 
         startcareer: '1980'
     }
-]
+];
 
-console.log(pilotes);
+/**********************/
+/******| map(); |******/
+/**********************/
+
+// const fullNames = pilotes.map((pilote) => pilote.first + ' ' + pilote.last;);
+
+const fullNames = pilotes.map((pilote) => {
+    return pilote.first + ' ' + pilote.last;
+});
+
+console.log(fullNames);
+
+
+/*************************/
+/******| filter(); |******/
+/*************************/
+
+// const pilotesFR = pilotes.filter((pilotes) => pilotes.country === 'France';);
+
+const pilotesFR = pilotes.filter((pilotes) => {
+    return pilotes.country === 'France';
+}); 
+
+console.log(pilotesFR);
+
+
+/***********************/
+/******| sort(); |******/
+/***********************/
+
+let pilotesAlpha = pilotes.sort((p1, p2) => {
+    if(p1.last > p2.last) {
+        return 1;
+    } else {
+        return -1;
+    }
+});
+console.log(pilotesAlpha);
 
 
 let numbers = Array.of(1, 2, 3);
@@ -93,5 +130,34 @@ const divs = document.querySelectorAll('div');
 const divsArray = Array.from(divs);
 
 console.log(divsArray);
+
 //NodeList
 console.log(divs);
+
+/*********************************/
+/******| Clôner un tableau |******/ 
+/*********************************/ 
+
+/*************************************/
+/******| Méthode 01 - 'slice();' |******/ 
+/*************************************/ 
+let pilotesSecond = pilotes.slice();
+console.log('Clone array - Méthode slice();', pilotesSecond);
+
+/**************************************/
+/******| Méthode 02 - 'concat();' |******/ 
+/**************************************/ 
+let pilotesThird = [].concat(pilotes);
+console.log('Clone array - Méthode concat();', pilotesThird);
+
+/********************************************/
+/******| Méthode 03 - 'Spread Operator' |******/ 
+/********************************************/ 
+let pilotesFourth = [...pilotes];
+console.log('Clone array - Méthode SpreadOperator', pilotesFourth);
+
+/********************************************/
+/******| Méthode 04 - 'Array.from();' |********/ 
+/********************************************/ 
+let pilotesFifth = Array.from(pilotes);
+console.log('Clone array - Méthode Array.from();', pilotesFifth);
