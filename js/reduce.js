@@ -117,9 +117,9 @@ const priceWithTAXE = prices.reduce((acc, curr) => {
 
 console.log('map() avec reduce', priceWithTAXE);
 
-/*****************************************/
+/********************************************/
 /******| Recréer filter() avec Reduce |******/ 
-/*****************************************/ 
+/********************************************/ 
 
 const frenchPilotes = pilotes.reduce((acc, curr) => {
     if(curr.country === 'France') {

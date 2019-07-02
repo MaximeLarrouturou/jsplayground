@@ -161,3 +161,4 @@ console.log('Clone array - Méthode SpreadOperator', pilotesFourth);
 /********************************************/ 
 let pilotesFifth = Array.from(pilotes);
 console.log('Clone array - Méthode Array.from();', pilotesFifth);
+

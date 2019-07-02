@@ -21,7 +21,7 @@ const warrior = {
     alive: true
 };
 
-function createPlayer() {
+function createPlayer(playerName, gameName) {
     let score = 0;
 
     return {
